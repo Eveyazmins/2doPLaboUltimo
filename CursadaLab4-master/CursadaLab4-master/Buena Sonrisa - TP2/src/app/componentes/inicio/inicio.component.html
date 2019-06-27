@@ -12,12 +12,12 @@
 <button type="button" class="btn btn-primary">Listado Macotas</button>
 <br>
 <br>
-<!--
+
 <button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Administrador'">Listado de Turnos</button>
 <br>
--->
+
 <br>
 <button type="button" class="btn btn-primary">Ver Mascotas</button>
 <br>
 <br>
-<button type="button" class="btn btn-primary">Solicitar Turno</button>
+<button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Cliente'">Solicitar Turno</button>

@@ -11,6 +11,6 @@ export interface UsuarioInterface {
     Email:string;
     Password:string;
     ImagenUrl?:string;
-    Perfil?:Perfil;
+    Perfil?:string;
     Activo?:boolean;
 }

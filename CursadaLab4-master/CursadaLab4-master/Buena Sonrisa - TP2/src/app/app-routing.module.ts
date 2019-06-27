@@ -8,7 +8,7 @@ import { ChatComponent } from './componentes/chat/chat.component';
 import { AuthGuardService } from './servicios/AuthGuard.service';
 
 const routes: Routes = [
-  { path: 'inicio', component: InicioComponent },
+  { path: 'inicio', component: InicioComponent, canActivate: [ AuthGuardService ] },
   { path: 'logearse', component: LoginComponent },
   { path: 'registrarse', component: RegistroComponent },
   { path: 'chat', component: ChatComponent, canActivate: [ AuthGuardService ] },

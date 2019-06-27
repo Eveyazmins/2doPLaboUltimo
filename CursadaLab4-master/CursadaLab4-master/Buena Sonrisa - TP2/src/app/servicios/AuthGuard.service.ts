@@ -10,6 +10,7 @@ export class AuthGuardService implements CanActivate {
     let url: string = state.url;
     console.log('Url:' + url);
     if (this.usuarioService.isUserLoggedIn()) {
+      console.log("reentro!");
       return true;
     }
     this.usuarioService.setRedirectUrl(url);

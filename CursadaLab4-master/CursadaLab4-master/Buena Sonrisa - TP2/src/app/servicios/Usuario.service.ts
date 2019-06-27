@@ -6,6 +6,7 @@ import { UsuarioInterface, Perfil } from '../clases/Usuario';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NotificationsService } from 'angular2-notifications';
 
+
 @Injectable({
     providedIn: 'root'
 })
@@ -113,7 +114,7 @@ export class UsuarioService {
             Password: '',
             ImagenUrl: "",
             Activo: false,
-            Perfil: Perfil.Cliente
+            Perfil: "Cliente",
         }
     }
 
