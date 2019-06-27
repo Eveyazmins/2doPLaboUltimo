@@ -23,6 +23,7 @@ import { MaterialModule } from './componentes/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardService } from './servicios/AuthGuard.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import {AltaMascotaComponent} from './componentes/alta-mascota/alta-mascota.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     Error404Component,
     RegistroComponent,
     ChatComponent,
+    AltaMascotaComponent,
   ],
   imports: [
     BrowserModule,
