@@ -3,21 +3,12 @@
   Seleccione actividad
 </p>
 <br>
-<button type="button" class="btn btn-primary">Alta de Mascota</button>
+<button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Administrador'" routerLink="/alta-materia">Alta de Materia</button>
 <br>
 <br>
-<button type="button" class="btn btn-primary">Modificar Mascota</button>
+<button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Administrador'" routerLink="/alta-materia">Listado Materias</button>
 <br>
 <br>
-<button type="button" class="btn btn-primary">Listado Macotas</button>
+<button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Administrador'">Listado Usuarios</button>
 <br>
 <br>
-
-<button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Administrador'">Listado de Turnos</button>
-<br>
-
-<br>
-<button type="button" class="btn btn-primary">Ver Mascotas</button>
-<br>
-<br>
-<button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Cliente'">Solicitar Turno</button>

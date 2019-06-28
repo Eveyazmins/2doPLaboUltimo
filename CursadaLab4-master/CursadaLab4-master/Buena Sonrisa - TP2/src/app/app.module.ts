@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardService } from './servicios/AuthGuard.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import {AltaMascotaComponent} from './componentes/alta-mascota/alta-mascota.component';
+import { AltaMateriaComponent } from './componentes/alta-materia/alta-materia.component';
+import { ListadoMateriasComponent } from './componentes/listado-materias/listado-materias.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import {AltaMascotaComponent} from './componentes/alta-mascota/alta-mascota.comp
     RegistroComponent,
     ChatComponent,
     AltaMascotaComponent,
+    AltaMateriaComponent,
+    ListadoMateriasComponent
   ],
   imports: [
     BrowserModule,

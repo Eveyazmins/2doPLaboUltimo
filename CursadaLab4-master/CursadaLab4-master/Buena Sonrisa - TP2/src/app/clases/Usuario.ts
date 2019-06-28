@@ -2,7 +2,9 @@ export enum Perfil {
     Cliente = 'Cliente',
     Recepcionista = 'Recepcionista',
     Especialista = 'Especialista',
-    Administrador = 'Administrador'
+    Administrador = 'Administrador',
+    Profesor = 'Profesor',
+    Alumno = 'Alumno',
 }
 
 export interface UsuarioInterface {

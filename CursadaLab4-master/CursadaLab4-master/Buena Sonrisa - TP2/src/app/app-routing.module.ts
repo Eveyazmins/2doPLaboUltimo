@@ -6,6 +6,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ChatComponent } from './componentes/chat/chat.component';
 import { AuthGuardService } from './servicios/AuthGuard.service';
+import { AltaMateriaComponent } from './componentes/alta-materia/alta-materia.component';
+import { ListadoMateriasComponent } from './componentes/listado-materias/listado-materias.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent, canActivate: [ AuthGuardService ] },
@@ -13,7 +15,10 @@ const routes: Routes = [
   { path: 'registrarse', component: RegistroComponent },
   { path: 'chat', component: ChatComponent, canActivate: [ AuthGuardService ] },
   { path: '404', component: Error404Component }, 
-  { path: '**', redirectTo: '404' }
+  //{ path: '**', redirectTo: '404' },
+  { path: 'alta-materia', component: AltaMateriaComponent, canActivate: [ AuthGuardService ]},
+  { path: 'listado-materia', component: ListadoMateriasComponent, canActivate: [ AuthGuardService ]}
+
   // {
   //   path: '',
   //   component: PrincipalComponent,
