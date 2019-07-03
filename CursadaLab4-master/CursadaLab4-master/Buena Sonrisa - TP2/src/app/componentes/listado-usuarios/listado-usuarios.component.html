@@ -7,7 +7,7 @@
 
 <div class="form-group">
   <label for="Perfil">Perfil</label>
-    <select class="form-control" [(ngModel)]="filter">
+    <select class="form-control" [(ngModel)]="fil">
       <option value=""></option>
       <option value="Alumno">Alumno</option>
       <option value="Profesor">Profesor</option>
@@ -16,7 +16,8 @@
 </div>
 
 
-<mat-card *ngFor="let item of usuarios | filter">
+
+<mat-card *ngFor="let item of usuarios | filter: fil">
   <mat-card-title>
     <h2>Usuario: {{item.Email}}</h2>
     <h4>Nombre: {{item.Nombre}}</h4>

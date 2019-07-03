@@ -28,6 +28,7 @@ import { AltaMateriaComponent } from './componentes/alta-materia/alta-materia.co
 import { ListadoMateriasComponent } from './componentes/listado-materias/listado-materias.component';
 import { ListadoUsuariosComponent } from './componentes/listado-usuarios/listado-usuarios.component';
 import {FilterPipe} from './pipes/filter.pipe';
+import { InscMateriaComponent } from './componentes/insc-materia/insc-materia.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {FilterPipe} from './pipes/filter.pipe';
     AltaMateriaComponent,
     ListadoMateriasComponent,
     ListadoUsuariosComponent,
-    FilterPipe
+    FilterPipe,
+    InscMateriaComponent
   ],
   imports: [
     BrowserModule,

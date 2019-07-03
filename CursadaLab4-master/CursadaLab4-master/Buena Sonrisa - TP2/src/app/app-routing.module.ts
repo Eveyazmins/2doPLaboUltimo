@@ -9,6 +9,7 @@ import { AuthGuardService } from './servicios/AuthGuard.service';
 import { AltaMateriaComponent } from './componentes/alta-materia/alta-materia.component';
 import { ListadoMateriasComponent } from './componentes/listado-materias/listado-materias.component';
 import { ListadoUsuariosComponent } from './componentes/listado-usuarios/listado-usuarios.component';
+import { InscMateriaComponent } from './componentes/insc-materia/insc-materia.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent, canActivate: [ AuthGuardService ] },
@@ -19,7 +20,9 @@ const routes: Routes = [
   //{ path: '**', redirectTo: '404' },
   { path: 'alta-materia', component: AltaMateriaComponent, canActivate: [ AuthGuardService ]},
   { path: 'listado-materia', component: ListadoMateriasComponent, canActivate: [ AuthGuardService ]},
-  { path: 'listado-usuarios', component: ListadoUsuariosComponent, canActivate: [ AuthGuardService ]}
+  { path: 'listado-usuarios', component: ListadoUsuariosComponent, canActivate: [ AuthGuardService ]},
+  { path: 'insc-materia', component: InscMateriaComponent, canActivate: [ AuthGuardService ]},
+
 
   // {
   //   path: '',
