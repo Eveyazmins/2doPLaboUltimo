@@ -1,4 +1,15 @@
-<p>
-  listado-materias works!
-</p>
+<br>
+<h1>Listado de Materias</h1>
 
+<br>
+
+<!--<mat-card *ngFor="let item of usuarios">-->
+
+<mat-card *ngFor="let item of materias">
+<mat-card-title>
+  <h2>Materia: {{item.nombre}}</h2>
+  <h4>Profesor: {{item.profesor}}</h4>
+  <h4>Cupos: {{item.cupos}}</h4>
+</mat-card-title>
+<a href="#" class="btn btn-danger" >Eliminar</a>
+</mat-card>

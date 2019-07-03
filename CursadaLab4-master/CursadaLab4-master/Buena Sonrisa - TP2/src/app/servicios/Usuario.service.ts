@@ -5,6 +5,10 @@ import { Router } from '@angular/router';
 import { UsuarioInterface, Perfil } from '../clases/Usuario';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NotificationsService } from 'angular2-notifications';
+import * as firebase from 'firebase/app'
+import 'firebase/auth';
+import 'firebase/firestore';
+import 'firebase/storage';
 
 
 @Injectable({
@@ -15,9 +19,17 @@ export class UsuarioService {
     usuario: UsuarioInterface;
     private redirectUrl: string = '/';
     private loginUrl: string = '/logearse';
+    public listaUsuariosRef: firebase.firestore.CollectionReference;
 
     constructor(private afsAuth: AngularFireAuth, private db: AngularFirestore, private router: Router, private ns: NotificationsService) {
         this.UsuarioVacio();
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+              this.listaUsuariosRef = firebase
+                .firestore()
+                .collection('/Usuarios');
+            }
+          });
     }
 
     /*Invoco directamente al servicio Auth de firebase para crear el usuario con mail y pass.
@@ -134,10 +146,20 @@ export class UsuarioService {
 
         return this.db.collection('usuarios', ref => ref.where('email', '==', email)
         .where('email', '==', email + '\uf8ff'))
-        .snapshotChanges();
-        
+        .snapshotChanges();   
     }
 
+    TraerUsuarios() {
+        console.log("entro");
+        return this.db.collection('usuarios').snapshotChanges();
+      }
+
+    
+      TraerProfesores() {
+        return this.db.collection('usuarios', ref => ref.where('Perfil', '>=', 'Profesor')
+        .where('Perfil', '<=', 'Profesor' + '\uf8ff'))
+        .snapshotChanges();
+      }
 
    
 }

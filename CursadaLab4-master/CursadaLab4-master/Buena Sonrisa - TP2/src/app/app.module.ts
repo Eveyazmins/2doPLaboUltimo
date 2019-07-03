@@ -26,6 +26,8 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import {AltaMascotaComponent} from './componentes/alta-mascota/alta-mascota.component';
 import { AltaMateriaComponent } from './componentes/alta-materia/alta-materia.component';
 import { ListadoMateriasComponent } from './componentes/listado-materias/listado-materias.component';
+import { ListadoUsuariosComponent } from './componentes/listado-usuarios/listado-usuarios.component';
+import {FilterPipe} from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ListadoMateriasComponent } from './componentes/listado-materias/listado
     ChatComponent,
     AltaMascotaComponent,
     AltaMateriaComponent,
-    ListadoMateriasComponent
+    ListadoMateriasComponent,
+    ListadoUsuariosComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

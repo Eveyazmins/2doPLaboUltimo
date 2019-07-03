@@ -9,9 +9,26 @@ import { Router } from '@angular/router';
 })
 export class ListadoMateriasComponent implements OnInit {
 
+  materias: any;
+
   constructor( private matService: MateriasService, public router: Router) { }
 
   ngOnInit() {
+
+    this.matService.TraerMaterias().subscribe(data => {
+      
+                  this.materias = data.map(e => {
+                    return {
+                      id: e.payload.doc.id,
+                      isEdit: false,
+                      cuatrimestre: e.payload.doc.data()['cuatrimestre'],
+                      nombre: e.payload.doc.data()['nombre'],
+                      cupos: e.payload.doc.data()['cupos'],
+                      profesor: e.payload.doc.data()['profesor'],
+                      };
+                  })
+                  console.log(this.materias);
+                });
   }
 
 }

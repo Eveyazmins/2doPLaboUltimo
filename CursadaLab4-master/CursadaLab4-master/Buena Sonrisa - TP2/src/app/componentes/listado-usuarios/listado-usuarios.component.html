@@ -1,0 +1,27 @@
+<br>
+  <h1>Listado de usuarios</h1>
+
+<br>
+
+<!--<mat-card *ngFor="let item of usuarios">-->
+
+<div class="form-group">
+  <label for="Perfil">Perfil</label>
+    <select class="form-control" [(ngModel)]="filter">
+      <option value=""></option>
+      <option value="Alumno">Alumno</option>
+      <option value="Profesor">Profesor</option>
+      <option value="Administrador">Administrador</option>
+    </select>
+</div>
+
+
+<mat-card *ngFor="let item of usuarios | filter">
+  <mat-card-title>
+    <h2>Usuario: {{item.Email}}</h2>
+    <h4>Nombre: {{item.Nombre}}</h4>
+    <h4>Perfil: {{item.Perfil}}</h4>
+  </mat-card-title>
+  <a href="#" class="btn btn-danger" >Eliminar</a>
+</mat-card>
+
