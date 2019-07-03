@@ -1,18 +1,55 @@
-<p>
-  insc-materia works!
-</p>
+<section class="h-100 registro-pagina">
+  <div class="container h-100">
+    <div class="row justify-content-md-center h-100">
+      <div class="card-wrapper">
+        <div class="brand">
+          
+        </div>
+        <div class="card fat">
+          <div class="card-body">
+            <h4 class="card-title">Inscripción Materias</h4>
+            <form>
 
-<div class="form-group">
-  <label for="name">Nombre</label>
-  <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="nombreAlumnoModel"
-    #name="ngModel" required>
-</div>
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="nombreAlumnoModel"
+                      #name="ngModel" required>
+                  </div>
 
-<div class="form-group">
-  <label for="Materia">Materia</label>
-  <select class="form-control" name="materia" id="materia" [(ngModel)]="materiaModel"
-   required>
-    <option *ngFor="let item of materias">{{item.Nombre}}</option>                    
- </select>
-</div>
+                  <div class="form-group">
+                    <label for="name">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)]="apellidoAlumnoModel"
+                      #name="ngModel" required>
+                  </div>
 
+                  <div class="form-group">
+                    <label for="name">DNI</label>
+                    <input type="text" class="form-control" name="dni" id="dni" [(ngModel)]="dniAlumnoModel"
+                      #name="ngModel" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="Materia">Materia</label>
+                      <select class="form-control" name="materia" id="materia" [(ngModel)]="materiaModel"
+                       required>
+                        <option *ngFor="let item of materias">{{item.Nombre}}</option>                    
+                     </select>
+                    </div>
+
+                    <div class="form-group no-margin">
+              
+                        <button class="btn btn-primary btn-block" 
+                        (click)="inscripcion()">
+                          Inscribirme 
+                        </button>
+                      
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+                  
