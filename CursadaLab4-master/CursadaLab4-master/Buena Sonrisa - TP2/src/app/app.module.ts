@@ -29,6 +29,9 @@ import { ListadoMateriasComponent } from './componentes/listado-materias/listado
 import { ListadoUsuariosComponent } from './componentes/listado-usuarios/listado-usuarios.component';
 import {FilterPipe} from './pipes/filter.pipe';
 import { InscMateriaComponent } from './componentes/insc-materia/insc-materia.component';
+import { ListadoInscComponent } from './componentes/listado-insc/listado-insc.component';
+import { ListadoMatProfComponent } from './componentes/listado-mat-prof/listado-mat-prof.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { InscMateriaComponent } from './componentes/insc-materia/insc-materia.co
     ListadoMateriasComponent,
     ListadoUsuariosComponent,
     FilterPipe,
-    InscMateriaComponent
+    InscMateriaComponent,
+    ListadoInscComponent,
+    ListadoMatProfComponent
   ],
   imports: [
     BrowserModule,

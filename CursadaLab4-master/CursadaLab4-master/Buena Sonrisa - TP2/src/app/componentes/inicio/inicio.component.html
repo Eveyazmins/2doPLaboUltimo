@@ -15,3 +15,8 @@
 <button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Alumno'" routerLink="/insc-materia">Inscripción Materias</button>
 <br>
 <br>
+<button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Alumno'" routerLink="/listado-insc">Mis Materias</button>
+<br>
+<br>
+<button type="button" class="btn btn-primary" *ngIf="usuarioService.usuario.Perfil=='Profesor'" routerLink="/listado-asig">Mis Materias</button>
+<br>

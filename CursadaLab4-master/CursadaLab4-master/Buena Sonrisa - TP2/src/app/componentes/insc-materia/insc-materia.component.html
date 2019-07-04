@@ -32,6 +32,7 @@
                       <label for="Materia">Materia</label>
                       <select class="form-control" name="materia" id="materia" [(ngModel)]="materiaModel"
                        required>
+                       <option></option>
                         <option *ngFor="let item of materias">{{item.Nombre}}</option>                    
                      </select>
                     </div>

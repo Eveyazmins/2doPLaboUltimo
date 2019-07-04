@@ -10,6 +10,9 @@ import { AltaMateriaComponent } from './componentes/alta-materia/alta-materia.co
 import { ListadoMateriasComponent } from './componentes/listado-materias/listado-materias.component';
 import { ListadoUsuariosComponent } from './componentes/listado-usuarios/listado-usuarios.component';
 import { InscMateriaComponent } from './componentes/insc-materia/insc-materia.component';
+import {ListadoInscComponent } from './componentes/listado-insc/listado-insc.component';
+import { ListadoMatProfComponent } from './componentes/listado-mat-prof/listado-mat-prof.component';
+
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent, canActivate: [ AuthGuardService ] },
@@ -22,6 +25,8 @@ const routes: Routes = [
   { path: 'listado-materia', component: ListadoMateriasComponent, canActivate: [ AuthGuardService ]},
   { path: 'listado-usuarios', component: ListadoUsuariosComponent, canActivate: [ AuthGuardService ]},
   { path: 'insc-materia', component: InscMateriaComponent, canActivate: [ AuthGuardService ]},
+  { path: 'listado-insc', component: ListadoInscComponent, canActivate: [ AuthGuardService ]},
+  { path: 'listado-asig', component: ListadoMatProfComponent, canActivate: [ AuthGuardService ]},
 
 
   // {

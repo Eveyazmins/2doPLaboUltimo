@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/servicios/Usuario.service';
 import { Pipe } from '@angular/core';
-import { UsuarioInterface, Perfil, Usuario } from 'src/app/clases/Usuario';
+import { UsuarioInterface, Perfil } from 'src/app/clases/Usuario';
 
 @Pipe({ name: 'filter' })
 
@@ -34,7 +34,7 @@ export class ListadoUsuariosComponent implements OnInit {
    
 
   ngOnInit() {
-    console.log("filtro:" + this.filter);
+   // console.log("filtro:" + this.filter);
   }
 
    

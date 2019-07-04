@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MateriasService } from 'src/app/servicios/materias.service';
 import { AlumnosService } from 'src/app/servicios/alumnos.service';
+import { ProfileService } from 'src/app/servicios/profile.service';
 import { NotificationsService } from 'angular2-notifications';
 import { Router } from '@angular/router';
 
@@ -17,7 +18,7 @@ export class InscMateriaComponent implements OnInit {
   apellidoAlumnoModel: string;
   dniAlumnoModel: string;
 
-  constructor(private matService: MateriasService, private ns: NotificationsService, private alumnosService: AlumnosService, public router: Router) {
+  constructor(private matService: MateriasService, private ns: NotificationsService, private alumnosService: AlumnosService, public router: Router, private profService: ProfileService) {
     this.matService.TraerMaterias().subscribe(data => {
       
       this.materias = data.map(e => {
@@ -54,7 +55,7 @@ export class InscMateriaComponent implements OnInit {
         return;
       }
       this.alumnosService
-        .crearInscripcion(this.nombreAlumnoModel, this.dniAlumnoModel, this.dniAlumnoModel, this.materiaModel)
+        .crearInscripcion(this.nombreAlumnoModel, this.apellidoAlumnoModel, this.dniAlumnoModel, this.materiaModel, this.profService.getUserUid())
         .then(() => {
           this.ns.success("Listo!", "Se cargó materia con exito.");
           this.router.navigateByUrl('/inicio')

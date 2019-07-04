@@ -4,6 +4,7 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ProfileService } from 'src/app/servicios/profile.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AlumnosService {
 
   public listaInscripcionesRef: firebase.firestore.CollectionReference;
-
-  constructor(private firestore: AngularFirestore) { 
+  public alumnoUid: any; 
+  
+  constructor(private firestore: AngularFirestore, private profService: ProfileService) { 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.listaInscripcionesRef = firebase
@@ -20,6 +22,7 @@ export class AlumnosService {
           .collection('/inscripciones');
       }
     });
+
   }
 
   crearInscripcion(
@@ -27,12 +30,14 @@ export class AlumnosService {
     alumnoApellido: string,
     alumnoDni: string,
     materiaNombre: string,
+    alumnoUid: any
   ): Promise<firebase.firestore.DocumentReference> {
     return this.listaInscripcionesRef.add({
       nombre: alumnoNombre,
       apellido: alumnoApellido,
       dni: alumnoDni,
       materia: materiaNombre,
+      uid: alumnoUid
   });
 }
 
@@ -42,8 +47,11 @@ TraerInscripciones() {
 }
 
 TraerInscripcionesPorUsuario() {
-  console.log("entro");
-  return this.firestore.collection('inscripciones').snapshotChanges();
+  this.alumnoUid = this.profService.getUserUid();
+
+  return this.firestore.collection('inscripciones', ref => ref.where('uid', '>=', this.alumnoUid)
+  .where('uid', '<=', this.alumnoUid + '\uf8ff')).snapshotChanges();
 }
+
 
 }

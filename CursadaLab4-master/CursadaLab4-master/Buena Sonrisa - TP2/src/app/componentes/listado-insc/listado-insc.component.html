@@ -1,0 +1,11 @@
+<p>
+Mis materias
+</p>
+
+<mat-card *ngFor="let item of inscripciones">
+  <mat-card-title>
+    <h2>Materia: {{item.Materia}}</h2>
+  </mat-card-title>
+  <a href="#" class="btn btn-danger" >Eliminar</a>
+</mat-card>
+

@@ -17,11 +17,3 @@ export interface UsuarioInterface {
     Activo?:boolean;
 }
 
-export class Usuario {
-
-    public Email:string;
-    public Nombre:string;
-    public Password:string;
-    public Perfil:string;
-    
-}

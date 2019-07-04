@@ -126,7 +126,7 @@ export class UsuarioService {
             Password: '',
             ImagenUrl: "",
             Activo: false,
-            Perfil: "Cliente",
+            Perfil: "Alumno",
         }
     }
 
