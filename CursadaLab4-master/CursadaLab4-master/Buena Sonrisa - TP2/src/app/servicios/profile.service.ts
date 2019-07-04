@@ -16,6 +16,8 @@ export class ProfileService {
 
   constructor() { 
 
+    console.log("entrop");
+
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.currentUser = user;
@@ -23,6 +25,7 @@ export class ProfileService {
         this.userUid = user.uid;
       }
     });
+    
   }
 
   getUserProfile(): firebase.firestore.DocumentReference {
@@ -32,6 +35,7 @@ export class ProfileService {
   getUserUid(): firebase.firestore.DocumentReference {
     return this.userUid;
   }
+
 
 
 }

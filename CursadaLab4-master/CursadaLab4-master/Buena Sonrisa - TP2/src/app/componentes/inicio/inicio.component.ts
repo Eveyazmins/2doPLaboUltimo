@@ -17,10 +17,9 @@ export class InicioComponent implements OnInit {
   constructor(private profileService: ProfileService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    /*
+    
     this.profileService
-    .getUserProfile()
-    .get()
+    .getUserProfile().get()
     .then( userProfileSnapshot => {
       this.userProfile = userProfileSnapshot.data();
       console.log(this.userProfile);
@@ -29,9 +28,9 @@ export class InicioComponent implements OnInit {
       this.usuarioService.usuario.Perfil = this.perfil;
       console.log("perfilusr" + this.usuarioService.usuario.Perfil);
     });
-    */
+    
 
-    console.log("perfilusr" + this.usuarioService.usuario.Perfil);
+    //console.log("perfilusr" + this.usuarioService.usuario.Perfil);
   }
 
 

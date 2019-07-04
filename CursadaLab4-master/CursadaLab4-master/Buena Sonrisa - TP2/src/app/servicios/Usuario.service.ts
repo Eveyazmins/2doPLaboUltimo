@@ -21,7 +21,9 @@ export class UsuarioService {
     private loginUrl: string = '/logearse';
     public listaUsuariosRef: firebase.firestore.CollectionReference;
 
-    constructor(private afsAuth: AngularFireAuth, private db: AngularFirestore, private router: Router, private ns: NotificationsService) {
+
+    constructor(private  afsAuth: AngularFireAuth, private db: AngularFirestore, private router: Router, private ns: NotificationsService) {
+        
         this.UsuarioVacio();
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
@@ -69,12 +71,14 @@ export class UsuarioService {
                                     this.router.navigate(['inicio']);
                                 }
                                 else {
-                                    this.UsuarioVacio();
+                           //         this.UsuarioVacio();
+                                    console.log("entro!");
                                 }
                             },
                             (err) => {
                                 console.log(err);
                                 this.UsuarioVacio();
+                                console.log("entro!");
                                 this.ns.error("Error inesperado", "Sucedió un error inesperado.");
                             });
                     });
@@ -82,20 +86,21 @@ export class UsuarioService {
     }
 
     LogearUsuario(email: string, password: string) {
+
         return new Promise(() => {
             this.afsAuth.auth.signInWithEmailAndPassword(email, password)
                 .then(
                     (userData) => {
                         if (userData) {
                             this.usuario.Uid = userData.user.uid;
+                            //console.log(this.usuario.Uid);
                             this.usuario.Email = userData.user.email;
                             this.usuario.ImagenUrl = userData.user.photoURL;
-                            this.usuario.Nombre = userData.user.displayName;
-                            
+                            this.usuario.Nombre = userData.user.displayName;    
+                           
                             this.ns.success("Logueo exitoso!");    
                             //console.log(this.usuario.Perfil);
                             this.router.navigate(['inicio']);
-
                         }
                         else {
                             this.UsuarioVacio();
@@ -112,6 +117,7 @@ export class UsuarioService {
     DeslogearUsuario() {
         this.afsAuth.auth.signOut();
         this.UsuarioVacio();
+        this.router.navigate(['logearse']);
     }
 
     EstaLogeado() {
@@ -126,7 +132,7 @@ export class UsuarioService {
             Password: '',
             ImagenUrl: "",
             Activo: false,
-            Perfil: "Alumno",
+            Perfil: "",
         }
     }
 
@@ -140,14 +146,6 @@ export class UsuarioService {
         return this.loginUrl;
     }
 
-    getPerfil(email){
-        
-        console.log("entro");
-
-        return this.db.collection('usuarios', ref => ref.where('email', '==', email)
-        .where('email', '==', email + '\uf8ff'))
-        .snapshotChanges();   
-    }
 
     TraerUsuarios() {
         console.log("entro");
